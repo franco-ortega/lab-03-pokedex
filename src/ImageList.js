@@ -5,7 +5,7 @@ export default class ImageList extends Component {
     render() {
         return (
             <div>
-                ImageItem
+                ImageList
                 <ImageItem />
             </div>
         )

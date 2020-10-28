@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Header from './Header.js';
 import Nav from './Nav.js';
 import ImageList from './ImageList.js';
-//create ImageItem in ImageItem.js
 import Search from './Search.js';
 import Sort from './Sort.js';
 import data from './Data.js';
