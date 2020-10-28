@@ -38,9 +38,20 @@ export default class App extends Component {
         App.js Page
         <Header />
         <Nav />
-        <ImageList pokemon={data} />
-        <Search />
-        <Sort />
+        <ImageList
+        pokemon={data}
+        filter={this.state.filter}
+        filterName={this.state.filterName}
+        sortAlphabetical={this.state.sortAlphabetical}
+        sortType={this.state.sortType}
+        />
+        <Search
+        handleNameChange={this.handleNameChange}
+        />
+        <Sort
+        handleAlphabeticalChange={this.handleAlphabeticalChange}
+        handleTypeChange={this.handleTypeChange}
+        />
       </div>
     )
   }
