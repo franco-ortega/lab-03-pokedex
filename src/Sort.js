@@ -15,9 +15,9 @@ export default class Sort extends Component {
                 </select>
                 <select onChange={this.props.handleAttackChange}>
                     <option value=''>Sort by Attack</option>
-                    <option value='ascending'>Low to High</option>
-                    <option value='descending'>High to Low</option>
-                 </select>                
+                    <option value='low-to-high'>Low to High</option>
+                    <option value='high-to-low'>High to Low</option>
+                 </select>
                  </div>
             </div>
         )
