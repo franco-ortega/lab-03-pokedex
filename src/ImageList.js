@@ -22,7 +22,7 @@ export default class ImageList extends Component {
                         egg_group_1={onePokemon.egg_group_1}
                         egg_group_2={onePokemon.egg_group_2}
                         shape={onePokemon.shape}
-                        url_image={onePokemon.url_image}
+                        url={onePokemon.url_image}
                         />
                     )
                 }
