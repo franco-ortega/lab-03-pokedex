@@ -4,7 +4,7 @@ export default class ImageItem extends Component {
     render() {
         return (
             <div>
-                ImageItem
+                
             </div>
         )
     }

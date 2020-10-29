@@ -19,18 +19,21 @@ export default class App extends Component {
     this.setState({
       filterName: e.target.value
     });
+    console.log('Name: ' + e.target.value);
   }
 
   handleAlphabeticalChange = (e) => {
     this.setState({
       sortAlphabetical: e.target.value
     });
+    console.log(e.target.value);
   }
 
   handleTypeChange = (e) => {
     this.setState({
       sortType: e.target.value
     });
+    console.log(e.target.value);
   }
 
   render() {
@@ -47,6 +50,7 @@ export default class App extends Component {
         sortType={this.state.sortType}
         />
         <Search
+        filterName={this.state.filterName}
         handleNameChange={this.handleNameChange}
         />
         <Sort
