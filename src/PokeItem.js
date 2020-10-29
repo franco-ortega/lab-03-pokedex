@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export default class ImageItem extends Component {
+export default class PokeItem extends Component {
     render() {
         return (
             <div className='pokemon-div'>

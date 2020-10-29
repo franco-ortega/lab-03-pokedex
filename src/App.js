@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import Header from './Header.js';
 import Nav from './Nav.js';
-import ImageList from './ImageList.js';
-import Search from './Search.js';
+import PokeList from './PokeList.js';
+import SearchBar from './SearchBar.js';
 import Sort from './Sort.js';
 import data from './Data.js';
 
@@ -11,6 +11,7 @@ export default class App extends Component {
 
   state = {
     filterName: '',
+    submitName: '',
     sortAlphabetical: '',
     sortType: '',
   }
@@ -19,21 +20,31 @@ export default class App extends Component {
     this.setState({
       filterName: e.target.value
     });
-    console.log('Name: ' + e.target.value);
+//    console.log('Name: ' + e.target.value);
   }
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    this.setState({
+      submitName: this.state.filterName
+    });
+    console.log('Submit: ' + this.state.filterName);
+  }
+
+
 
   handleAlphabeticalChange = (e) => {
     this.setState({
       sortAlphabetical: e.target.value
     });
-    console.log(e.target.value);
+    console.log('ABC: ' + e.target.value);
   }
 
   handleTypeChange = (e) => {
     this.setState({
       sortType: e.target.value
     });
-    console.log(e.target.value);
+    console.log('Type: ' + e.target.value);
   }
 
   render() {
@@ -43,16 +54,18 @@ export default class App extends Component {
         <Header />
         <div className='body-div'>
           <div className='sidebar-div'>
-            <Search
+            <SearchBar
             filterName={this.state.filterName}
+            submitName={this.state.submitName}
             handleNameChange={this.handleNameChange}
+            handleSubmit={this.handleSubmit}
             />
             <Sort
             handleAlphabeticalChange={this.handleAlphabeticalChange}
             handleTypeChange={this.handleTypeChange}
             />
           </div>
-          <ImageList
+          <PokeList
           pokemon={data}
           filter={this.state.filter}
           filterName={this.state.filterName}

@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
-import data from './Data.js';
-import ImageItem from './ImageItem.js';
+import PokeItem from './PokeItem.js';
 
-export default class ImageList extends Component {
+export default class PokeList extends Component {
     render() {
         return (
             <div>
 
                 {
-                    data.map(onePokemon => 
-                        <ImageItem 
+                    this.props.pokemon.map(onePokemon => 
+                        <PokeItem 
                         name={onePokemon.pokemon}
                         type={onePokemon.type_1}
                         attack={onePokemon.attack}
