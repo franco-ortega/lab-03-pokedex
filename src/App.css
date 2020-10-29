@@ -20,3 +20,8 @@ div {
 .intro-div {
     text-align: center;
 }
+
+.nav-div {
+    color: dimgray;
+    float: right;
+    position: relative;}

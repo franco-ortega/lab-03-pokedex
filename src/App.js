@@ -37,8 +37,8 @@ export default class App extends Component {
     return (
       <div>
         App.js Page
-        <Header />
         <Nav />
+        <Header />
         <ImageList
         pokemon={data}
         filter={this.state.filter}
