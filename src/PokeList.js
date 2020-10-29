@@ -6,33 +6,21 @@ export default class PokeList extends Component {
 
         const filteredPokemon = this.props.pokemon.filter((onePokemon) => {
             if (!this.props.submitName) return true;
-
             if (onePokemon.pokemon.includes(this.props.submitName)) return true;
-            
-//            if (onePokemon.type.sort((a, b) => a.type - b.type))
-
-//            if (this.props.sortAlphabetical.sort((a, b) => a.type - b.type)) return true;
-          
             return false;
+            
         }).sort((a, b) => {
             if (this.props.sortAlphabetical === 'ascending') return a.type_1.localeCompare(b.type_1);
-         else {
-            return b.type_1.localeCompare(a.type_1);
-        }
-            
-    }).sort((a, b) => {
-        if (this.props.sortAttack === 'low-to-high') return a.attack - b.attack;
-        else {
-           return b.attack -  a.attack;
-        }
-    })
+            if (this.props.sortAlphabetical === 'descending') return b.type_1.localeCompare(a.type_1);
+            return false;
+        }).sort((a, b) => {
+            if (this.props.sortAttack === 'low-to-high') return a.attack - b.attack;
+            if (this.props.sortAttack === 'high-to-low') return b.attack - a.attack;
+            return false;
+        })
 
-//        if(this.props.sortAlphabetical.sort((a, b) => { return a.type - b.type }))
-
-console.log(this.props.sortAlphabetical);
         return (
             <div>
-
                 {
                     filteredPokemon.map(onePokemon => 
                         <PokeItem 
