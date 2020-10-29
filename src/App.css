@@ -1,0 +1,22 @@
+body {
+    background-color: darkgray;
+    margin: auto;
+}
+
+div {
+    background-color: lightcoral;
+    color:darkblue;
+    margin: 10px;
+    padding: 5px;
+    border: black 1px solid;
+}
+
+.title-div {
+    font-size: larger;
+    font-weight: bold;
+    text-align: center;
+}
+
+.intro-div {
+    text-align: center;
+}
