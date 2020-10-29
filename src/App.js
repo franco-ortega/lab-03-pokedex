@@ -39,24 +39,27 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        App.js Page
         <Nav />
         <Header />
-        <ImageList
-        pokemon={data}
-        filter={this.state.filter}
-        filterName={this.state.filterName}
-        sortAlphabetical={this.state.sortAlphabetical}
-        sortType={this.state.sortType}
-        />
-        <Search
-        filterName={this.state.filterName}
-        handleNameChange={this.handleNameChange}
-        />
-        <Sort
-        handleAlphabeticalChange={this.handleAlphabeticalChange}
-        handleTypeChange={this.handleTypeChange}
-        />
+        <div className='body-div'>
+          <div className='sidebar-div'>
+            <Search
+            filterName={this.state.filterName}
+            handleNameChange={this.handleNameChange}
+            />
+            <Sort
+            handleAlphabeticalChange={this.handleAlphabeticalChange}
+            handleTypeChange={this.handleTypeChange}
+            />
+          </div>
+          <ImageList
+          pokemon={data}
+          filter={this.state.filter}
+          filterName={this.state.filterName}
+          sortAlphabetical={this.state.sortAlphabetical}
+          sortType={this.state.sortType}
+          />
+        </div>
       </div>
     )
   }
