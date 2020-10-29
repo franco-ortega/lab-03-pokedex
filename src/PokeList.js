@@ -3,11 +3,20 @@ import PokeItem from './PokeItem.js';
 
 export default class PokeList extends Component {
     render() {
+
+        const filteredPokemon = this.props.pokemon.filter((onePokemon) => {
+            if (!this.props.submitName) return true;
+
+            if (onePokemon.pokemon.includes(this.props.submitName)) return true;
+            
+            return false;
+        })
+
         return (
             <div>
 
                 {
-                    this.props.pokemon.map(onePokemon => 
+                    filteredPokemon.map(onePokemon => 
                         <PokeItem 
                         name={onePokemon.pokemon}
                         type={onePokemon.type_1}
