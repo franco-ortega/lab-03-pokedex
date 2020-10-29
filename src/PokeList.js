@@ -16,11 +16,17 @@ export default class PokeList extends Component {
 //            if (this.props.sortAlphabetical.sort((a, b) => a.type - b.type)) return true;
           
             return false;
-        })
+        }).sort((a, b) => {
+            if (this.props.sortAlphabetical === 'ascending') return a.type_1.localeCompare(b.type_1);
+         else {
+            return b.type_1.localeCompare(a.type_1);
+        }
+            
+    })
 
 //        if(this.props.sortAlphabetical.sort((a, b) => { return a.type - b.type }))
 
-
+console.log(this.props.sortAlphabetical);
         return (
             <div>
 
