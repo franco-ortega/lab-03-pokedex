@@ -1,24 +1,24 @@
 body {
-    background-color: darkgray;
+    background-color: lightcoral;
     margin: auto;
 }
 
 div {
     background-color: lightcoral;
     color:darkblue;
-    margin: 10px;
-    padding: 5px;
-    border: black 1px solid;
+    padding: 2px;
 }
 
 .title-div {
     font-size: larger;
     font-weight: bold;
     text-align: center;
+    margin: 10px;
 }
 
 .intro-div {
     text-align: center;
+    margin: 10px;
 }
 
 .nav-div {
@@ -26,22 +26,29 @@ div {
     color: dimgray;
     float: right;
     position: relative;
+    margin: 10px;
 }
 
-.search-div {
+.search-div, .sort-div {
     background-color: darkgreen;
     display: flex;
     flex-direction: column;
     align-items: center;
     float: left;
+    margin: 20px;
+    padding: 20px;
+    
 }
 
-.search-text-div {
+.search-text-div, .sort-text-div {
     margin: 5px;
     padding: 2px;
 }
 
-.search-input-div {
+.search-input-div, .sort-select-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin: 1px;
     padding: 1px;
 }
@@ -49,6 +56,7 @@ div {
 .pokemon-div {
     background-color: gray;
     float: right;
+    margin: ;
 }
 
 .body-div {
@@ -65,3 +73,11 @@ div {
 img {
     width: 150px;
 }
+
+input, select {
+    margin: 5px;
+}
+
+button {
+    margin: 0px;
+} 

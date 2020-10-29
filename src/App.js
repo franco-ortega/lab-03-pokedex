@@ -13,14 +13,13 @@ export default class App extends Component {
     filterName: '',
     submitName: '',
     sortAlphabetical: '',
-    sortType: '',
+    sortAttack: '',
   }
 
   handleNameChange = (e) => {
     this.setState({
       filterName: e.target.value
     });
-//    console.log('Name: ' + e.target.value);
   }
 
   handleSubmit = (e) => {
@@ -31,8 +30,6 @@ export default class App extends Component {
     console.log('Submit: ' + this.state.filterName);
   }
 
-
-
   handleAlphabeticalChange = (e) => {
     this.setState({
       sortAlphabetical: e.target.value
@@ -40,11 +37,11 @@ export default class App extends Component {
     console.log('ABC: ' + e.target.value);
   }
 
-  handleTypeChange = (e) => {
+  handleAttackChange = (e) => {
     this.setState({
-      sortType: e.target.value
+      sortAttack: e.target.value
     });
-    console.log('Type: ' + e.target.value);
+    console.log('Attack: ' + e.target.value);
   }
 
   render() {
@@ -62,16 +59,15 @@ export default class App extends Component {
             />
             <Sort
             handleAlphabeticalChange={this.handleAlphabeticalChange}
-            handleTypeChange={this.handleTypeChange}
+            handleAttackChange={this.handleAttackChange}
             />
           </div>
           <PokeList
           pokemon={data}
-//          filter={this.state.filter}
           filterName={this.state.filterName}
           submitName={this.state.submitName}
           sortAlphabetical={this.state.sortAlphabetical}
-          sortType={this.state.sortType}
+          sortAttack={this.state.sortAttack}
           />
         </div>
       </div>

@@ -9,8 +9,17 @@ export default class PokeList extends Component {
 
             if (onePokemon.pokemon.includes(this.props.submitName)) return true;
             
+            //if ascending is chosen, sort all pokemon A-Z
+            //if descending is chosen, sort all pokemon Z-A
+//            if (onePokemon.type.sort((a, b) => a.type - b.type))
+
+//            if (this.props.sortAlphabetical.sort((a, b) => a.type - b.type)) return true;
+          
             return false;
         })
+
+//        if(this.props.sortAlphabetical.sort((a, b) => { return a.type - b.type }))
+
 
         return (
             <div>

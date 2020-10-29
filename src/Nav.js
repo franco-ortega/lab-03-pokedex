@@ -4,7 +4,7 @@ export default class Nav extends Component {
     render() {
         return (
             <div className='nav-div'>
-                Nav Links to Somewhere
+                Nav Links
             </div>
         )
     }
