@@ -8,7 +8,7 @@ export default class Search extends Component {
                     Search for Pokemon here:
                 </div>
                 <div className='search-input-div'>
-                    <input value={this.props.filterName} onChange={this.props.filterName} />
+                    <input value={this.props.filterName} onChange={this.props.handleNameChange} />
                     {this.props.filterName}
                 </div>
                 <div className='search-button-div'>
