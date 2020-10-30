@@ -1,6 +1,8 @@
 body {
     background-color: lightcoral;
     margin: auto;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 div {
@@ -25,7 +27,9 @@ div {
     background-color: coral;
     color: dimgray;
     float: right;
-    position: relative;
+    position: absolute;
+    left: 90%;
+    top: 3%;
     margin: 10px;
 }
 
@@ -37,7 +41,25 @@ div {
     float: left;
     margin: 20px;
     padding: 20px;
-    
+}
+
+.body-div {
+    background-color: fuchsia;
+    display: flex;
+    flex-direction: row;
+}
+
+.pokemon-div {
+    float: left;
+    width: min-content;
+    height: 450px;
+    margin: 10px;
+    border: solid black;
+}
+
+.sidebar-div {
+    display: flex;
+    flex-direction: column;
 }
 
 .search-text-div, .sort-text-div {
@@ -53,23 +75,6 @@ div {
     padding: 1px;
 }
 
-.pokemon-div {
-    background-color: gray;
-    float: right;
-    margin: 10px;
-}
-
-.body-div {
-    background-color: fuchsia;
-    display: flex;
-    flex-direction: row;
-}
-
-.sidebar-div {
-    display: flex;
-    flex-direction: column;
-}
-
 img {
     width: 150px;
 }
@@ -80,4 +85,6 @@ input, select {
 
 button {
     margin: 0px;
-} 
+    position: relative;
+    transform: translate(27%, -10%);
+}
