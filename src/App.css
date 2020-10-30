@@ -24,14 +24,26 @@ div {
 }
 
 .nav-div {
-    background-color: coral;
     color: dimgray;
-    float: right;
+    /* float: right;
     position: absolute;
-    left: 90%;
-    top: 3%;
+    left: 5%;
+    top: 0%; */
     margin: 10px;
 }
+
+
+
+
+
+.top-div {
+    display: flex;
+    flex-direction: row;
+    border: sandybrown solid 5px;
+}
+
+
+
 
 .search-div, .sort-div {
     background-color: darkgreen;
@@ -47,6 +59,13 @@ div {
 .body-div {
     display: flex;
     flex-direction: row;
+}
+
+
+.whole-site-div {
+    border: solid red 10px;
+    margin: 40px;
+    float: rigth;
 }
 
 .pokemon-div {

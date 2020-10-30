@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
-import Header from './Header.js';
-import Nav from './Nav.js';
-import PokeList from './PokeList.js';
-import SearchBar from './SearchBar.js';
-import Sort from './Sort.js';
-import data from './Data.js';
+// import Header from './Header.js';
+// import Nav from './Nav.js';
+// import PokeList from './PokeList.js';
+// import SearchBar from './SearchBar.js';
+// import Sort from './Sort.js';
+// import data from './Data.js';
 
 export default class App extends Component {
 
@@ -46,8 +46,8 @@ export default class App extends Component {
 
   render() {
     return (
-      <div>
-        <Nav />
+      <div className='home-div'>THE NEW HOME PAGE
+        {/* <Nav />
         <Header />
         <div className='body-div'>
           <div className='sidebar-div'>
@@ -68,7 +68,7 @@ export default class App extends Component {
           sortAlphabetical={this.state.sortAlphabetical}
           sortAttack={this.state.sortAttack}
           />
-        </div>
+        </div> */}
       </div>
     )
   }
