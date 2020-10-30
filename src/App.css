@@ -45,7 +45,6 @@ div {
 }
 
 .body-div {
-    background-color: fuchsia;
     display: flex;
     flex-direction: row;
 }
