@@ -64,7 +64,6 @@ export default class App extends Component {
           </div>
           <PokeList
           pokemon={data}
-          filterName={this.state.filterName}
           submitName={this.state.submitName}
           sortAlphabetical={this.state.sortAlphabetical}
           sortAttack={this.state.sortAttack}
