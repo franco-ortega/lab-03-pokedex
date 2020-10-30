@@ -17,26 +17,26 @@ import Fetch from './Fetch.js';
 export default class App extends Component {
 
 
-  state = {
-    filterName: '',
-    submitName: '',
-    // sortAlphabetical: '',
-    // sortAttack: '',
-  }
+  // state = {
+  //   filterName: '',
+  //   submitName: '',
+  //   sortAlphabetical: '',
+  //   sortAttack: '',
+  // }
 
-  handleNameChange = (e) => {
-    this.setState({
-      filterName: e.target.value
-    });
-  }
+  // handleNameChange = (e) => {
+  //   this.setState({
+  //     filterName: e.target.value
+  //   });
+  // }
 
-  handleSubmit = (e) => {
-    e.preventDefault();
-    this.setState({
-      submitName: this.state.filterName
-    });
-    console.log('Submit: ' + this.state.filterName);
-  }
+  // handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   this.setState({
+  //     submitName: this.state.filterName
+  //   });
+  //   console.log('Submit: ' + this.state.filterName);
+  // }
 
   // handleAlphabeticalChange = (e) => {
   //   this.setState({

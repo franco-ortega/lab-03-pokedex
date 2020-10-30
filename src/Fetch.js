@@ -2,14 +2,20 @@ import React, { Component } from 'react'
 import request from 'superagent';
 import Sort from './Sort';
 
+const sleep = (time) => new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve()
+    }, time)
+});
+
 export default class Fetch extends Component {
 
     state = {
         pokeData: [],
         pokemon: '',
         sortAlphabetical: '',
-        sortType: 'pokemon',
-        
+        sortType: 'id',
+        loading: ''
     }
 
     componentDidMount = async () => {
@@ -19,6 +25,8 @@ export default class Fetch extends Component {
     fetchPokemon = async () => {
         console.log(this.state.sortAlphabetical)
         const response = await request.get(`https://alchemy-pokedex.herokuapp.com/api/pokedex?pokemon=${this.state.pokemon}&sort=${this.state.sortType}&direction=${this.state.sortAlphabetical}`);
+
+        await sleep(1000)
 
         this.setState({ pokeData: response.body.results})
     }
@@ -47,7 +55,6 @@ export default class Fetch extends Component {
         this.fetchPokemon()
         console.log('ABC: ' + e.target.value);
       }
-      
     
       handleTypeChange = async (e) => {
         await this.setState({
@@ -56,14 +63,12 @@ export default class Fetch extends Component {
         this.fetchPokemon()
         console.log('Type: ' + e.target.value);
       }
-    
 
 
 
     render() {
         return (
             <div>
-                FETCH PAGE
 
                 <div className='search-and-sort-div'>
                     <div className='fetch-search-div'>
@@ -80,7 +85,10 @@ export default class Fetch extends Component {
 
 
                 <div className='fetch-div'>
-                    {this.state.pokeData.map(onePoke =>
+                    {
+                    this.state.pokeData.length === 0
+                    ? <div>'loading!!!' <img src='https://media.giphy.com/media/MTKsRM3QzNeOI59SbO/giphy.gif' alt='spinner' /> </div>
+                    : this.state.pokeData.map(onePoke =>
                         <div key={onePoke.onePoke} className='fetched-pokemon-div'>
                             <p>
                                 {onePoke.pokemon}
