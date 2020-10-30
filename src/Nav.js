@@ -8,6 +8,7 @@ export default class Nav extends Component {
                 <ul>
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/list">All Pokemon</Link></li>
+                    <li><Link to="/fetch">Fetch</Link></li>
                 </ul>
 
 

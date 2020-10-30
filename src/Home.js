@@ -12,8 +12,8 @@ export default class App extends Component {
   state = {
     filterName: '',
     submitName: '',
-    sortAlphabetical: '',
-    sortAttack: '',
+    // sortAlphabetical: '',
+    // sortAttack: '',
   }
 
   handleNameChange = (e) => {
@@ -30,19 +30,19 @@ export default class App extends Component {
     console.log('Submit: ' + this.state.filterName);
   }
 
-  handleAlphabeticalChange = (e) => {
-    this.setState({
-      sortAlphabetical: e.target.value
-    });
-    console.log('ABC: ' + e.target.value);
-  }
+  // handleAlphabeticalChange = (e) => {
+  //   this.setState({
+  //     sortAlphabetical: e.target.value
+  //   });
+  //   console.log('ABC: ' + e.target.value);
+  // }
 
-  handleAttackChange = (e) => {
-    this.setState({
-      sortAttack: e.target.value
-    });
-    console.log('Attack: ' + e.target.value);
-  }
+  // handleAttackChange = (e) => {
+  //   this.setState({
+  //     sortAttack: e.target.value
+  //   });
+  //   console.log('Attack: ' + e.target.value);
+  // }
 
   render() {
     return (

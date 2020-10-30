@@ -8,10 +8,11 @@ import {
 import Header from './Header.js';
 import Nav from './Nav.js';
 import PokeList from './PokeList.js';
-import SearchBar from './SearchBar.js';
-import Sort from './Sort.js';
+//import SearchBar from './SearchBar.js';
+//import Sort from './Sort.js';
 //import data from './Data.js';
 import Home from './Home.js';
+import Fetch from './Fetch.js';
 
 export default class App extends Component {
 
@@ -19,8 +20,8 @@ export default class App extends Component {
   state = {
     filterName: '',
     submitName: '',
-    sortAlphabetical: '',
-    sortAttack: '',
+    // sortAlphabetical: '',
+    // sortAttack: '',
   }
 
   handleNameChange = (e) => {
@@ -37,19 +38,19 @@ export default class App extends Component {
     console.log('Submit: ' + this.state.filterName);
   }
 
-  handleAlphabeticalChange = (e) => {
-    this.setState({
-      sortAlphabetical: e.target.value
-    });
-    console.log('ABC: ' + e.target.value);
-  }
+  // handleAlphabeticalChange = (e) => {
+  //   this.setState({
+  //     sortAlphabetical: e.target.value
+  //   });
+  //   console.log('ABC: ' + e.target.value);
+  // }
 
-  handleAttackChange = (e) => {
-    this.setState({
-      sortAttack: e.target.value
-    });
-    console.log('Attack: ' + e.target.value);
-  }
+  // handleAttackChange = (e) => {
+  //   this.setState({
+  //     sortAttack: e.target.value
+  //   });
+  //   console.log('Attack: ' + e.target.value);
+  // }
 
 
     render() {
@@ -65,7 +66,7 @@ export default class App extends Component {
 
                     <div className='body-div'>
                       <div className='sidebar-div'>
-                        <SearchBar
+                        {/* <SearchBar
                         filterName={this.state.filterName}
                         submitName={this.state.submitName}
                         handleNameChange={this.handleNameChange}
@@ -74,7 +75,7 @@ export default class App extends Component {
                         <Sort
                         handleAlphabeticalChange={this.handleAlphabeticalChange}
                         handleAttackChange={this.handleAttackChange}
-                        />
+                        /> */}
                       </div>
 
                       {/* <PokeList
@@ -95,6 +96,11 @@ export default class App extends Component {
                                 path="/list" 
                                 exact
                                 render={(routerProps) => <PokeList {...routerProps} />} 
+                            />
+                            <Route 
+                                path="/fetch" 
+                                exact
+                                render={(routerProps) => <Fetch {...routerProps} />} 
                             />
                         </Switch>
                         </div>
