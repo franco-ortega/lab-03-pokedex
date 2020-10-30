@@ -1,11 +1,4 @@
-import React, { Component } from 'react'
-import {
-    BrowserRouter as Router, 
-    Route, 
-    Switch,
-} from 'react-router-dom';
-//import SearchPage from './SearchPage.js';
-//import DetailPage from './DetailPage.js';
+import React, { Component } from 'react';
 import './App.css';
 import Header from './Header.js';
 import Nav from './Nav.js';
@@ -13,10 +6,8 @@ import PokeList from './PokeList.js';
 import SearchBar from './SearchBar.js';
 import Sort from './Sort.js';
 import data from './Data.js';
-import Home from './Home.js';
 
 export default class App extends Component {
-
 
   state = {
     filterName: '',
@@ -53,16 +44,10 @@ export default class App extends Component {
     console.log('Attack: ' + e.target.value);
   }
 
-
-
-
-
-
-    render() {
-        return (
-            <div>
-                <Router>
-                <Nav />
+  render() {
+    return (
+      <div>
+        <Nav />
         <Header />
         <div className='body-div'>
           <div className='sidebar-div'>
@@ -84,21 +69,7 @@ export default class App extends Component {
           sortAttack={this.state.sortAttack}
           />
         </div>
-
-                    <Switch>
-                        <Route 
-                            path="/" 
-                            exact
-                            render={(routerProps) => <Home {...routerProps} />} 
-                        />
-                        <Route 
-                            path="/list" 
-                            exact
-                            render={(routerProps) => <PokeList {...routerProps} />} 
-                        />
-                    </Switch>
-                </Router>
-            </div>
-        )
-    }
+      </div>
+    )
+  }
 }
