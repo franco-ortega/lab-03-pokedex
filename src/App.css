@@ -13,7 +13,7 @@ div {
 
 
 .whole-site-div {
-    border: solid red 10px;
+    border: dotted green 5px;
     margin: 40px;
     float: rigth;
 }
@@ -24,8 +24,17 @@ div {
 .top-div {
     display: flex;
     flex-direction: row;
-    border: sandybrown solid 5px;
+    border: sandybrown solid 10px;
 }
+
+@media (min-width: 600px) {
+    .top-div {
+        width: 1000px;
+    }
+    
+}
+
+
 
 .nav-div {
     color: dimgray;
@@ -40,17 +49,7 @@ div {
     border: dotted lightgreen 3px;
 }
 
-.title-div {
-    font-size: larger;
-    font-weight: bold;
-    text-align: center;
-    margin: 10px;
-}
 
-.intro-div {
-    text-align: center;
-    margin: 10px;
-}
 
 .body-div {
     display: flex;
@@ -61,29 +60,10 @@ div {
 
 
 
-.sidebar-div {
-    display: flex;
-    flex-direction: column;
-    border: solid black;
-}
-
-/* 
-.search-div, .sort-div {
-    background-color: darkgreen;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    float: left;
-    width: 170px;
-    margin: 20px;
-    padding: 20px;
-    border: dotted fuchsia 3px;
-} */
-
-
 
 .home-div {
     border: solid silver 5px;
+    width: 100%;
 }
 
 .home-sub-div {
@@ -160,4 +140,10 @@ input, select {
 }
 
 
+div {
+    border: solid black;
+}
 
+ol, ul {
+    list-style: none;
+}

@@ -51,7 +51,7 @@ export default class App extends Component {
           <h2>THE NEW HOME PAGE</h2>
         </div>
         <div className='home-sub-div'>
-          This is where your search results will appear.
+          Go to the Search page to look through the Pokedex and look at all the different Pokemon based on different categories.
         </div>
         <div className='home-sub-div'>
           Home page bottom area.

@@ -65,8 +65,8 @@ export default class App extends Component {
                     </div>
 
                     <div className='body-div'>
-                      <div className='sidebar-div'>
-                        {/* <SearchBar
+                      {/* <div className='sidebar-div'>
+                        <SearchBar
                         filterName={this.state.filterName}
                         submitName={this.state.submitName}
                         handleNameChange={this.handleNameChange}
@@ -75,8 +75,8 @@ export default class App extends Component {
                         <Sort
                         handleAlphabeticalChange={this.handleAlphabeticalChange}
                         handleAttackChange={this.handleAttackChange}
-                        /> */}
-                      </div>
+                        />
+                      </div> */}
 
                       {/* <PokeList
                       pokemon={data}

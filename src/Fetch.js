@@ -87,14 +87,29 @@ export default class Fetch extends Component {
                 <div className='fetch-div'>
                     {
                     this.state.pokeData.length === 0
-                    ? <div>'loading!!!' <img src='https://media.giphy.com/media/MTKsRM3QzNeOI59SbO/giphy.gif' alt='spinner' /> </div>
+                    ? <div>Loading <img src='https://media.giphy.com/media/MTKsRM3QzNeOI59SbO/giphy.gif' alt='spinner' /> </div>
                     : this.state.pokeData.map(onePoke =>
-                        <div key={onePoke.onePoke} className='fetched-pokemon-div'>
+                       
+                       
+                       
+                       <div key={onePoke.onePoke} className='fetched-pokemon-div'>
                             <p>
-                                {onePoke.pokemon}
+                                <div>{onePoke.pokemon}</div>
                                 <img src={onePoke.url_image} alt={onePoke.pokemon} />
+                                <div>Type: {onePoke.type_1}</div>
+                                <div>Attack: {onePoke.attack}</div>
+                                <div>Defense: {onePoke.defense}</div>
+                                <div>HP: {onePoke.hp}</div>
+                                <div>Speed: {onePoke.speed}</div>
+                                <div>Ability 1: {onePoke.ability_1}</div>
+                                <div>Hidden Ability: {onePoke.ability_hidden}</div>
+                                <div>Egg Group 1: {onePoke.egg_group_1}</div>
+                                <div>Egg Group 2: {onePoke.egg_group_2}</div>
+                                <div>Shape: {onePoke.shape}</div>
                             </p>
                         </div>
+
+                        
                     )}
                 </div>
 
