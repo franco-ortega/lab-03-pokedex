@@ -11,6 +11,35 @@ div {
     padding: 2px;
 }
 
+
+.whole-site-div {
+    border: solid red 10px;
+    margin: 40px;
+    float: rigth;
+}
+
+
+
+
+.top-div {
+    display: flex;
+    flex-direction: row;
+    border: sandybrown solid 5px;
+}
+
+.nav-div {
+    color: dimgray;
+    position: absolute;
+    margin: 10px;
+    border: dotted purple 3px;
+}
+
+.header-div {
+    position: relative;
+    left: 35%;
+    border: dotted lightgreen 3px;
+}
+
 .title-div {
     font-size: larger;
     font-weight: bold;
@@ -23,26 +52,17 @@ div {
     margin: 10px;
 }
 
-.nav-div {
-    color: dimgray;
-    /* float: right;
-    position: absolute;
-    left: 5%;
-    top: 0%; */
-    margin: 10px;
-}
-
-
-
-
-
-.top-div {
+.body-div {
     display: flex;
     flex-direction: row;
-    border: sandybrown solid 5px;
+    border: dotted brown 3px;
 }
 
-
+.sidebar-div {
+    display: flex;
+    flex-direction: column;
+    border: solid black;
+}
 
 
 .search-div, .sort-div {
@@ -54,19 +74,21 @@ div {
     width: 170px;
     margin: 20px;
     padding: 20px;
+    border: dotted fuchsia 3px;
 }
 
-.body-div {
-    display: flex;
-    flex-direction: row;
+.home-div {
+    border: solid silver 5px;
+}
+
+.home-sub-div {
+    margin: 10px;
+    padding: 5px;
+    border: dotted gold 2px;
 }
 
 
-.whole-site-div {
-    border: solid red 10px;
-    margin: 40px;
-    float: rigth;
-}
+
 
 .pokemon-div {
     float: left;
@@ -76,10 +98,6 @@ div {
     border: solid black;
 }
 
-.sidebar-div {
-    display: flex;
-    flex-direction: column;
-}
 
 .search-text-div, .sort-text-div {
     margin: 5px;

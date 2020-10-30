@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 export default class Header extends Component {
     render() {
         return (
-            <div>
+            <div className='header-div'>
                 <div className='title-div'>
                     Welcome to the Pokedex!!!
                 </div>

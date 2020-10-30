@@ -46,7 +46,17 @@ export default class App extends Component {
 
   render() {
     return (
-      <div className='home-div'>THE NEW HOME PAGE
+      <div className='home-div'>
+        <div className='home-sub-div'>
+          <h2>THE NEW HOME PAGE</h2>
+        </div>
+        <div className='home-sub-div'>
+          This is where your search results will appear.
+        </div>
+        <div className='home-sub-div'>
+          Home page bottom area.
+        </div>
+      
         {/* <Nav />
         <Header />
         <div className='body-div'>
