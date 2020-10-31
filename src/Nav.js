@@ -7,7 +7,7 @@ export default class Nav extends Component {
             <div className='nav-div'>
                 <ul>
                     <li><Link to="/">Home</Link></li>
-                    <li><Link to="/fetch">Fetch</Link></li>
+                    <li><Link to="/fetch">Search</Link></li>
                 </ul>
 
 

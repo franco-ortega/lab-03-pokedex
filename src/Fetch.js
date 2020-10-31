@@ -71,15 +71,15 @@ export default class Fetch extends Component {
             <div>
 
                 <div className='search-and-sort-div'>
-                    <div className='fetch-search-div'>
-                    <input onChange={this.handleInput} />
-                    <button onClick={this.handleButton}>Search by Name</button>
+                    <div className='search-div'>
+                        <input onChange={this.handleInput} />
+                        <button onClick={this.handleButton}>Search by Name</button>
                     </div>
-                    <div>
-                    <Sort
-                    handleAlphabeticalChange={this.handleAlphabeticalChange}
-                    handleTypeChange={this.handleTypeChange}
-                    />
+                    <div className='sort-div'>
+                        <Sort
+                        handleAlphabeticalChange={this.handleAlphabeticalChange}
+                        handleTypeChange={this.handleTypeChange}
+                        />
                     </div>
                 </div>
 
@@ -87,7 +87,7 @@ export default class Fetch extends Component {
                 <div className='fetch-div'>
                     {
                     this.state.pokeData.length === 0
-                    ? <div>Loading <img src='https://media.giphy.com/media/MTKsRM3QzNeOI59SbO/giphy.gif' alt='spinner' /> </div>
+                    ? <div><div>Loading</div> <img src='https://media.giphy.com/media/MTKsRM3QzNeOI59SbO/giphy.gif' alt='spinner' /> </div>
                     : this.state.pokeData.map(onePoke =>
                        
                        

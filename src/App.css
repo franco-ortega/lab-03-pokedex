@@ -1,3 +1,11 @@
+*{
+    margin: auto;
+}
+
+ol, ul {
+    list-style: none;
+}
+
 body {
     background-color: lightcoral;
     margin: auto;
@@ -8,45 +16,36 @@ body {
 div {
     background-color: lightcoral;
     color:darkblue;
-    padding: 2px;
 }
 
 
-.whole-site-div {
-    border: dotted green 5px;
-    margin: 40px;
-    float: rigth;
-}
-
-
+/* .whole-site-div {
+    margin: 10px;
+} */
 
 
 .top-div {
     display: flex;
     flex-direction: row;
-    border: sandybrown solid 10px;
+    margin: 10px;
 }
 
 @media (min-width: 600px) {
     .top-div {
         width: 1000px;
-    }
-    
+    }   
 }
-
 
 
 .nav-div {
     color: dimgray;
-    position: absolute;
-    margin: 10px;
-    border: dotted purple 3px;
+    position: relative;
+    margin: 5px;
 }
 
 .header-div {
     position: relative;
-    left: 35%;
-    border: dotted lightgreen 3px;
+    left: -2%;
 }
 
 
@@ -54,48 +53,34 @@ div {
 .body-div {
     display: flex;
     flex-direction: row;
-    border: dotted brown 3px;
+    text-align: center;
 }
 
 
 
 
+.home-text-div {
+    background-color: darkblue;
+    color: gold;
+    font-weight: bold;
+    position: absolute;
+    padding: 15px;
+    width: 50%;
+    text-align: justify;
+    z-index: 1;
+    opacity: 95%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 
-.home-div {
-    border: solid silver 5px;
+
+.big-image {
     width: 100%;
-}
-
-.home-sub-div {
-    margin: 10px;
-    padding: 5px;
-    border: dotted gold 2px;
+    position: relative;
 }
 
 
-
-
-.pokemon-div {
-    float: left;
-    width: min-content;
-    height: 450px;
-    margin: 10px;
-    border: solid black;
-}
-
-
-.search-text-div, .sort-text-div {
-    margin: 5px;
-    padding: 2px;
-}
-
-/* .search-input-div, .sort-select-div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 1px;
-    padding: 1px;
-} */
 
 img {
     width: 150px;
@@ -105,45 +90,62 @@ input, select {
     margin: 5px;
 }
 
-/* button {
-    margin: 0px;
-    position: relative;
-    transform: translate(27%, -10%);
-} */
-
-
-
-
 
 .search-and-sort-div {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    border: dotted brown 4px;
+    flex-direction: column;
 }
 
-.fetch-search-div {
+.search-div, .sort-div {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 }
 
 .fetch-div {
     display: flex;
     flex-wrap: wrap;
-    border: solid orange 2px;
 }
 
 .fetched-pokemon-div {
-    border: solid lightsteelblue 2px;
+    border: solid black 2px;
     margin: 5px;
+    width: min-content;
+    height: 450px;
+
 }
 
 
-div {
+
+
+
+/* .search-input-div, .sort-select-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1px;
+    padding: 1px;
+} */
+
+
+/* .search-text-div, .sort-text-div {
+    margin: 5px;
+    padding: 2px;
+} */
+
+
+/* 
+.pokemon-div {
+    float: left;
+    width: min-content;
+    height: 450px;
+    margin: 10px;
     border: solid black;
 }
+ */
 
-ol, ul {
-    list-style: none;
-}
+
+/* button {
+    margin: 0px;
+    position: relative;
+    transform: translate(27%, -10%);
+} */

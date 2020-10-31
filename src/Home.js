@@ -1,34 +1,29 @@
 import React, { Component } from 'react';
 import './App.css';
-// import Header from './Header.js';
-// import Nav from './Nav.js';
-// import PokeList from './PokeList.js';
-// import SearchBar from './SearchBar.js';
-// import Sort from './Sort.js';
-// import data from './Data.js';
+import image from './pokemon.jpeg';
 
 export default class App extends Component {
 
-  state = {
-    filterName: '',
-    submitName: '',
-    // sortAlphabetical: '',
-    // sortAttack: '',
-  }
+  // state = {
+  //   filterName: '',
+  //   submitName: '',
+  //   sortAlphabetical: '',
+  //   sortAttack: '',
+  // }
 
-  handleNameChange = (e) => {
-    this.setState({
-      filterName: e.target.value
-    });
-  }
+  // handleNameChange = (e) => {
+  //   this.setState({
+  //     filterName: e.target.value
+  //   });
+  // }
 
-  handleSubmit = (e) => {
-    e.preventDefault();
-    this.setState({
-      submitName: this.state.filterName
-    });
-    console.log('Submit: ' + this.state.filterName);
-  }
+  // handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   this.setState({
+  //     submitName: this.state.filterName
+  //   });
+  //   console.log('Submit: ' + this.state.filterName);
+  // }
 
   // handleAlphabeticalChange = (e) => {
   //   this.setState({
@@ -47,38 +42,12 @@ export default class App extends Component {
   render() {
     return (
       <div className='home-div'>
-        <div className='home-sub-div'>
-          <h2>THE NEW HOME PAGE</h2>
-        </div>
-        <div className='home-sub-div'>
+        <div className='home-text-div'>
           Go to the Search page to look through the Pokedex and look at all the different Pokemon based on different categories.
         </div>
-        <div className='home-sub-div'>
-          Home page bottom area.
-        </div>
-      
-        {/* <Nav />
-        <Header />
-        <div className='body-div'>
-          <div className='sidebar-div'>
-            <SearchBar
-            filterName={this.state.filterName}
-            submitName={this.state.submitName}
-            handleNameChange={this.handleNameChange}
-            handleSubmit={this.handleSubmit}
-            />
-            <Sort
-            handleAlphabeticalChange={this.handleAlphabeticalChange}
-            handleAttackChange={this.handleAttackChange}
-            />
-          </div>
-          <PokeList
-          pokemon={data}
-          submitName={this.state.submitName}
-          sortAlphabetical={this.state.sortAlphabetical}
-          sortAttack={this.state.sortAttack}
-          />
-        </div> */}
+        <div>
+          <img src={image} alt='all the pokemon' className='big-image' />
+        </div>  
       </div>
     )
   }
