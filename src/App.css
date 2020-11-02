@@ -32,7 +32,7 @@ div {
 
 @media (min-width: 600px) {
     .top-div {
-        width: 1000px;
+        width: 800px;
     }   
 }
 
@@ -45,7 +45,7 @@ div {
 
 .header-div {
     position: relative;
-    left: -2%;
+    left: 6%;
 }
 
 
@@ -65,13 +65,14 @@ div {
     font-weight: bold;
     position: absolute;
     padding: 15px;
-    width: 50%;
+    width: 30%;
     text-align: justify;
     z-index: 1;
     opacity: 95%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    border-radius: 25px;
 }
 
 
@@ -104,14 +105,16 @@ input, select {
 .fetch-div {
     display: flex;
     flex-wrap: wrap;
+    
 }
 
 .fetched-pokemon-div {
     border: solid black 2px;
     margin: 5px;
+    padding: 5px;
     width: min-content;
-    height: 450px;
-
+    height: 425px;
+    
 }
 
 

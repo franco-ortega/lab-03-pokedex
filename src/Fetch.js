@@ -15,7 +15,7 @@ export default class Fetch extends Component {
         pokemon: '',
         sortAlphabetical: '',
         sortType: 'id',
-        loading: ''
+        loading: true
     }
 
     componentDidMount = async () => {
@@ -24,11 +24,14 @@ export default class Fetch extends Component {
 
     fetchPokemon = async () => {
         console.log(this.state.sortAlphabetical)
+        this.setState({
+            loading: true
+        });
         const response = await request.get(`https://alchemy-pokedex.herokuapp.com/api/pokedex?pokemon=${this.state.pokemon}&sort=${this.state.sortType}&direction=${this.state.sortAlphabetical}`);
 
-        await sleep(1000)
+//        await sleep(1000)
 
-        this.setState({ pokeData: response.body.results})
+        this.setState({ pokeData: response.body.results, loading: false})
     }
 
 
@@ -41,6 +44,8 @@ export default class Fetch extends Component {
         this.setState({ pokemon: e.target.value });
         e.preventDefault();
         const response = await request.get(`https://alchemy-pokedex.herokuapp.com/api/pokedex?pokemon=${this.state.pokemon}`);
+
+//        await sleep(1000)
 
         this.setState({ pokeData: response.body.results})
     }
@@ -86,7 +91,7 @@ export default class Fetch extends Component {
 
                 <div className='fetch-div'>
                     {
-                    this.state.pokeData.length === 0
+                    this.state.loading
                     ? <div><div>Loading</div> <img src='https://media.giphy.com/media/MTKsRM3QzNeOI59SbO/giphy.gif' alt='spinner' /> </div>
                     : this.state.pokeData.map(onePoke =>
                        
