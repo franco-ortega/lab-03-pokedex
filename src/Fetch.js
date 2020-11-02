@@ -2,12 +2,6 @@ import React, { Component } from 'react'
 import request from 'superagent';
 import Sort from './Sort';
 
-const sleep = (time) => new Promise((resolve, reject) => {
-    setTimeout(() => {
-        resolve()
-    }, time)
-});
-
 export default class Fetch extends Component {
 
     state = {
@@ -29,11 +23,8 @@ export default class Fetch extends Component {
         });
         const response = await request.get(`https://alchemy-pokedex.herokuapp.com/api/pokedex?pokemon=${this.state.pokemon}&sort=${this.state.sortType}&direction=${this.state.sortAlphabetical}`);
 
-//        await sleep(1000)
-
         this.setState({ pokeData: response.body.results, loading: false})
     }
-
 
 //Search Input and Button
     handleInput = async (e) => {
@@ -45,13 +36,9 @@ export default class Fetch extends Component {
         e.preventDefault();
         const response = await request.get(`https://alchemy-pokedex.herokuapp.com/api/pokedex?pokemon=${this.state.pokemon}`);
 
-//        await sleep(1000)
-
         this.setState({ pokeData: response.body.results})
     }
 
-
-    
 //Drop Down Menus
     handleAlphabeticalChange = async (e) => {
         await this.setState({
@@ -69,12 +56,9 @@ export default class Fetch extends Component {
         console.log('Type: ' + e.target.value);
       }
 
-
-
     render() {
         return (
             <div>
-
                 <div className='search-and-sort-div'>
                     <div className='search-div'>
                         <input onChange={this.handleInput} />
@@ -87,38 +71,29 @@ export default class Fetch extends Component {
                         />
                     </div>
                 </div>
-
-
                 <div className='fetch-div'>
                     {
                     this.state.loading
                     ? <div><div>Loading</div> <img src='https://media.giphy.com/media/MTKsRM3QzNeOI59SbO/giphy.gif' alt='spinner' /> </div>
                     : this.state.pokeData.map(onePoke =>
-                       
-                       
-                       
                        <div key={onePoke.onePoke} className='fetched-pokemon-div'>
                             <p>
-                                <div>{onePoke.pokemon}</div>
+                                <p className='poke-name'>{onePoke.pokemon}</p>
                                 <img src={onePoke.url_image} alt={onePoke.pokemon} />
-                                <div>Type: {onePoke.type_1}</div>
-                                <div>Attack: {onePoke.attack}</div>
-                                <div>Defense: {onePoke.defense}</div>
-                                <div>HP: {onePoke.hp}</div>
-                                <div>Speed: {onePoke.speed}</div>
-                                <div>Ability 1: {onePoke.ability_1}</div>
-                                <div>Hidden Ability: {onePoke.ability_hidden}</div>
-                                <div>Egg Group 1: {onePoke.egg_group_1}</div>
-                                <div>Egg Group 2: {onePoke.egg_group_2}</div>
-                                <div>Shape: {onePoke.shape}</div>
+                                <p><span className='underline'>Type:</span> {onePoke.type_1}</p>
+                                <p><span className='underline'>Attack: </span>{onePoke.attack}</p>
+                                <p><span className='underline'>Defense:</span> {onePoke.defense}</p>
+                                <p><span className='underline'>HP:</span> {onePoke.hp}</p>
+                                <p><span className='underline'>Speed:</span> {onePoke.speed}</p>
+                                <p><span className='underline'>Ability 1:</span> {onePoke.ability_1}</p>
+                                <p><span className='underline'>Hidden Ability:</span> {onePoke.ability_hidden}</p>
+                                <p><span className='underline'>Egg Group 1:</span> {onePoke.egg_group_1}</p>
+                                <p><span className='underline'>Egg Group 2:</span> {onePoke.egg_group_2}</p>
+                                <p><span className='underline'>Shape:</span> {onePoke.shape}</p>
                             </p>
                         </div>
-
-                        
                     )}
                 </div>
-
-
             </div>
         )
     }

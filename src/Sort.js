@@ -4,9 +4,6 @@ export default class Sort extends Component {
     render() {
         return (
             <div className='sort-div'>
-                {/* <div className='sort-text-div'>
-                Sort Pokemon
-                </div> */}
                 <div className='sort-select-div'>
                 <select onChange={this.props.handleTypeChange}>
                     <option value=''>Sort by Category</option>

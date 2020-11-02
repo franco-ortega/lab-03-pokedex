@@ -7,61 +7,35 @@ ol, ul {
 }
 
 body {
-    background-color: lightcoral;
+    background-color: rgb(241, 142, 142);
     margin: auto;
-    display: flex;
-    flex-wrap: wrap;
 }
 
 div {
-    background-color: lightcoral;
+    background-color: rgb(241, 142, 142);
     color:darkblue;
 }
 
-
-/* .whole-site-div {
-    margin: 10px;
-} */
-
-
 .top-div {
-    display: flex;
-    flex-direction: row;
-    margin: 10px;
-}
-
-@media (min-width: 600px) {
-    .top-div {
-        width: 800px;
-    }   
-}
-
-
-.nav-div {
-    color: dimgray;
-    position: relative;
-    margin: 5px;
+    display: grid;
+    grid-template-columns: 1fr 10fr 1fr;
+    margin: 10px 0px;
+    padding: 10px 0px;
 }
 
 .header-div {
-    position: relative;
-    left: 6%;
+    padding: 5px;
+    width: max-content;
 }
-
-
 
 .body-div {
     display: flex;
     flex-direction: row;
-    text-align: center;
 }
 
-
-
-
 .home-text-div {
-    background-color: darkblue;
-    color: gold;
+    background-color: rgb(0, 0, 139);
+    color: rgb(255, 215, 0);
     font-weight: bold;
     position: absolute;
     padding: 15px;
@@ -75,26 +49,25 @@ div {
     border-radius: 25px;
 }
 
-
-.big-image {
-    width: 100%;
-    position: relative;
-}
-
-
-
 img {
     width: 150px;
+}
+
+.big-image {
+    position: relative;
+    width: 100%;
+    border-radius: 5%;
 }
 
 input, select {
     margin: 5px;
 }
 
-
 .search-and-sort-div {
     display: flex;
     flex-direction: column;
+    margin: 10px;
+    padding: 10px;
 }
 
 .search-div, .sort-div {
@@ -105,50 +78,25 @@ input, select {
 .fetch-div {
     display: flex;
     flex-wrap: wrap;
-    
+    flex-direction: row;
+    justify-content: space-evenly;    
 }
 
 .fetched-pokemon-div {
-    border: solid black 2px;
+    background-color: rgb(70, 130, 180);
+    border-radius: 25px;
     margin: 5px;
-    padding: 5px;
+    padding: 10px;
     width: min-content;
-    height: 425px;
-    
+    height: auto;
 }
 
-
-
-
-
-/* .search-input-div, .sort-select-div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 1px;
-    padding: 1px;
-} */
-
-
-/* .search-text-div, .sort-text-div {
-    margin: 5px;
-    padding: 2px;
-} */
-
-
-/* 
-.pokemon-div {
-    float: left;
-    width: min-content;
-    height: 450px;
-    margin: 10px;
-    border: solid black;
+.poke-name {
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
 }
- */
 
-
-/* button {
-    margin: 0px;
-    position: relative;
-    transform: translate(27%, -10%);
-} */
+.underline {
+    text-decoration: underline;
+}
