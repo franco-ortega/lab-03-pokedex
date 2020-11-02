@@ -9,6 +9,8 @@ import Header from './Header.js';
 import Nav from './Nav.js';
 import Home from './Home.js';
 import Fetch from './Fetch.js';
+import DetailsPage from './DetailsPage.js';
+import Pagination from './Pagination.js';
 
 export default class App extends Component {
 
@@ -35,6 +37,16 @@ export default class App extends Component {
                                 exact
                                 render={(routerProps) => <Fetch {...routerProps} />} 
                             />
+                            <Route 
+                                path="/details/:pokemonDetails"
+                                exact
+                                render={(routerProps) => <DetailsPage {...routerProps} />} 
+                            />
+                            <Route 
+                                path="/pagination"
+                                exact
+                                render={(routerProps) => <Pagination {...routerProps} />} 
+                            />                                                        
                         </Switch>
                     </div>
 
