@@ -26,6 +26,14 @@ export default class DetailsPage extends Component {
     render() {
         return (
             <div className='details-div'>
+                <div className='details-link-div'>
+                    <p>
+                        <Link to="/fetch">Back to Search</Link>
+                    </p>
+                    <p>
+                        <Link to="/pagination">Back to Pagination</Link>
+                    </p>
+                </div>
                 {
                     this.state.loading
                     ? <div><div>Loading</div> <img src='https://media.giphy.com/media/MTKsRM3QzNeOI59SbO/giphy.gif' alt='spinner' /> </div>
@@ -47,14 +55,6 @@ export default class DetailsPage extends Component {
                             </p>
                         </div>
                 }
-                <div className='details-link-div'>
-                    <p>
-                        <Link to="/fetch">Go back to Search</Link>
-                    </p>
-                    <p>
-                        <Link to="/pagination">Go back to Pagination</Link>
-                    </p>
-                </div>
             </div>
         )
     }
