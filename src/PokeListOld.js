@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import PokeItem from './PokeItem.js';
+import data from './Data.js';
 
 export default class PokeList extends Component {
     render() {
+        
 
-        const filteredPokemon = this.props.pokemon.filter((onePokemon) => {
+        const filteredPokemon = data.filter((onePokemon) => {
             if (!this.props.submitName) return true;
             if (onePokemon.pokemon.includes(this.props.submitName)) return true;
             return false;
@@ -20,10 +22,12 @@ export default class PokeList extends Component {
         })
 
         return (
-            <div>
+            <div>POKELIST PAGE
                 {
                     filteredPokemon.map(onePokemon => 
                         <PokeItem 
+                        pokemon={data}
+
                         name={onePokemon.pokemon}
                         type={onePokemon.type_1}
                         attack={onePokemon.attack}
