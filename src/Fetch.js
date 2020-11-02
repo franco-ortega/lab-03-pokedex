@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import request from 'superagent';
 import Sort from './Sort';
+import { Link } from 'react-router-dom';
 
 export default class Fetch extends Component {
 
@@ -17,7 +18,6 @@ export default class Fetch extends Component {
     }
 
     fetchPokemon = async () => {
-        console.log(this.state.sortAlphabetical)
         this.setState({
             loading: true
         });
@@ -56,9 +56,14 @@ export default class Fetch extends Component {
         console.log('Type: ' + e.target.value);
       }
 
+//Pokemon Click to view Details
+      handleClick = async (onePoke) => {
+          this.props.history.push(`pokeData/${onePoke.pokemon}`);
+      }
+
     render() {
         return (
-            <div>
+            <div className='fetch-div'>
                 <div className='search-and-sort-div'>
                     <div className='search-div'>
                         <input onChange={this.handleInput} />
@@ -71,12 +76,13 @@ export default class Fetch extends Component {
                         />
                     </div>
                 </div>
-                <div className='fetch-div'>
+                <div className='fetched-pokemon-div'>
                     {
                     this.state.loading
                     ? <div><div>Loading</div> <img src='https://media.giphy.com/media/MTKsRM3QzNeOI59SbO/giphy.gif' alt='spinner' /> </div>
                     : this.state.pokeData.map(onePoke =>
-                       <div key={onePoke.onePoke} className='fetched-pokemon-div'>
+                        <Link to={`/details/${onePoke.pokemon}`}>
+                       <div key={onePoke.onePoke} onClick={(e) => this.handleClick(onePoke)} className='fetched-details-div'>
                             <p>
                                 <p className='poke-name'>{onePoke.pokemon}</p>
                                 <img src={onePoke.url_image} alt={onePoke.pokemon} />
@@ -92,6 +98,7 @@ export default class Fetch extends Component {
                                 <p><span className='underline'>Shape:</span> {onePoke.shape}</p>
                             </p>
                         </div>
+                        </Link>
                     )}
                 </div>
             </div>
