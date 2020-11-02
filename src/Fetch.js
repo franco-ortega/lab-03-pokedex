@@ -64,7 +64,7 @@ export default class Fetch extends Component {
 
     render() {
         return (
-            <div>
+            <div className='fetch-div'>
                 <div className='search-and-sort-div'>
                     <div className='search-div'>
                         <input onChange={this.handleInput} />
@@ -77,13 +77,13 @@ export default class Fetch extends Component {
                         />
                     </div>
                 </div>
-                <div className='fetch-div'>
+                <div className='fetched-pokemon-div'>
                     {
                     this.state.loading
                     ? <div><div>Loading</div> <img src='https://media.giphy.com/media/MTKsRM3QzNeOI59SbO/giphy.gif' alt='spinner' /> </div>
                     : this.state.pokeData.map(onePoke =>
-                        <Link to={`/pagination/${onePoke.pokemon}`}>
-                       <div key={onePoke.onePoke} onClick={(e) => this.handleClick(onePoke)} className='fetched-pokemon-div'>
+                        <Link to={`/details/${onePoke.pokemon}`}>
+                       <div key={onePoke.onePoke} onClick={(e) => this.handleClick(onePoke)} className='fetched-details-div'>
                             <p>
                                 <p className='poke-name'>{onePoke.pokemon}</p>
                                 <img src={onePoke.url_image} alt={onePoke.pokemon} />

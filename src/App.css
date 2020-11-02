@@ -81,14 +81,14 @@ input, select {
     flex-direction: row;
 }
 
-.fetch-div {
+.fetched-pokemon-div, .pokemon-pagination-div {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: space-evenly;    
+    justify-content: space-evenly; 
 }
 
-.fetched-pokemon-div {
+.fetched-details-div {
     background-color: rgb(70, 130, 180);
     border-radius: 25px;
     margin: 5px;
@@ -105,4 +105,17 @@ input, select {
 
 .underline {
     text-decoration: underline;
+}
+
+.fetch-div, .pagination-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border: solid 2px brown;
+}
+
+.search-and-button-div {
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
 }

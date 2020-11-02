@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import request from 'superagent';
-//import Sort from './Sort';
 
 export default class DetailsPage extends Component {
 
@@ -9,8 +8,6 @@ export default class DetailsPage extends Component {
         pokemon: '',
         loading: true,
         pokemonDetails: ''
-        // sortAlphabetical: '',
-        // sortType: 'id',
     }
 
     componentDidMount = async () => {
@@ -18,14 +15,12 @@ export default class DetailsPage extends Component {
     }
 
     fetchPokemon = async () => {
-        console.log(this.state.pokemon);
-        console.log(this.state.pokeData);
         this.setState({
             loading: true
         });
-        const response = await request.get(`https://alchemy-pokedex.herokuapp.com/api/pokedex?pokemon=${this.props.match.params.pokeDetails}`);
+        const response = await request.get(`https://alchemy-pokedex.herokuapp.com/api/pokedex?pokemon=${this.props.match.params.pokemonDetails}`);
 
-        this.setState({ pokeData: response.body.results, loading: false})
+        this.setState({ pokeData: response.body.results[0], loading: false})
     }
 
 
@@ -37,30 +32,32 @@ export default class DetailsPage extends Component {
                 {
                     this.state.loading
                     ? <div><div>Loading</div> <img src='https://media.giphy.com/media/MTKsRM3QzNeOI59SbO/giphy.gif' alt='spinner' /> </div>
-                    : this.state.pokeData.map(onePoke =>
-                       <div key={onePoke.onePoke} className='fetched-pokemon-div'>
+                    : 
+                       <div key={this.state.pokeData} className='fetched-pokemon-div'>
                             <p>
-                                <p className='poke-name'>{onePoke.pokemon}</p>
-                                <img src={onePoke.url_image} alt={onePoke.pokemon} />
-                                <p><span className='underline'>Type:</span> {onePoke.type_1}</p>
-                                <p><span className='underline'>Attack: </span>{onePoke.attack}</p>
-                                <p><span className='underline'>Defense:</span> {onePoke.defense}</p>
-                                <p><span className='underline'>HP:</span> {onePoke.hp}</p>
-                                <p><span className='underline'>Speed:</span> {onePoke.speed}</p>
-                                <p><span className='underline'>Ability 1:</span> {onePoke.ability_1}</p>
-                                <p><span className='underline'>Hidden Ability:</span> {onePoke.ability_hidden}</p>
-                                <p><span className='underline'>Egg Group 1:</span> {onePoke.egg_group_1}</p>
-                                <p><span className='underline'>Egg Group 2:</span> {onePoke.egg_group_2}</p>
-                                <p><span className='underline'>Shape:</span> {onePoke.shape}</p>
+                                <p className='poke-name'>{this.state.pokeData.pokemon}</p>
+                                <img src={this.state.pokeData.url_image} alt={this.state.pokeData.pokemon} />
+                                <p><span className='underline'>Type:</span> {this.state.pokeData.type_1}</p>
+                                <p><span className='underline'>Attack: </span>{this.state.pokeData.attack}</p>
+                                <p><span className='underline'>Defense:</span> {this.state.pokeData.defense}</p>
+                                <p><span className='underline'>HP:</span> {this.state.pokeData.hp}</p>
+                                <p><span className='underline'>Speed:</span> {this.state.pokeData.speed}</p>
+                                <p><span className='underline'>Ability 1:</span> {this.state.pokeData.ability_1}</p>
+                                <p><span className='underline'>Hidden Ability:</span> {this.state.pokeData.ability_hidden}</p>
+                                <p><span className='underline'>Egg Group 1:</span> {this.state.pokeData.egg_group_1}</p>
+                                <p><span className='underline'>Egg Group 2:</span> {this.state.pokeData.egg_group_2}</p>
+                                <p><span className='underline'>Shape:</span> {this.state.pokeData.shape}</p>
                             </p>
                         </div>
-                )}
+                }
 
 
             </div>
         )
     }
 }
+
+
 
 
 
@@ -115,8 +112,8 @@ export default class DetailsPage extends Component {
                 //     {
                 //     this.state.loading
                 //     ? <div><div>Loading</div> <img src='https://media.giphy.com/media/MTKsRM3QzNeOI59SbO/giphy.gif' alt='spinner' /> </div>
-                //     : this.state.pokeData.map(onePoke =>
-                //        <div key={onePoke.onePoke} className='fetched-pokemon-div'>
+                //     : this.state.pokeData.map(this.state.pokeData =>
+                //        <div key={this.state.pokeData.onePoke} className='fetched-pokemon-div'>
                 //             <p>
                 //                 <p className='poke-name'>{onePoke.pokemon}</p>
                 //                 <img src={onePoke.url_image} alt={onePoke.pokemon} />

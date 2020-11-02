@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import fetch from 'superagent';
+import { Link } from 'react-router-dom';
 
 export default class Pagination extends Component {
     state = {
@@ -15,7 +16,6 @@ export default class Pagination extends Component {
 
     handleSumbit = async (e) => {
         e.preventDefault();
-
         await this.fetchPokemon();
     }
 
@@ -27,7 +27,6 @@ export default class Pagination extends Component {
         await this.setState({
             pageNumber: this.state.pageNumber + 1,
         })
-
         await this.fetchPokemon();
     }
 
@@ -35,7 +34,6 @@ export default class Pagination extends Component {
         await this.setState({
             pageNumber: this.state.pageNumber - 1,
         })
-
         await this.fetchPokemon();
     }
 
@@ -44,50 +42,57 @@ export default class Pagination extends Component {
         const response = await fetch.get(`https://alchemy-pokedex.herokuapp.com/api/pokedex?page=${this.state.pageNumber}&perPage=20`);
 
         this.setState({
-            pokemon: response.body.results,
+            pokeData: response.body.results,
             loading: false,
             count: response.body.count
         })
     }
 
+    handleClick = async (onePoke) => {
+        this.props.history.push(`pokeData/${onePoke.pokemon}`);
+    }
 
     render() {
+        console.log(this.state.pokemon);
         return (
             <div className='pagination-div'>
-
-                <form onSubmit={this.handleSumbit}>
-                    <input onChange={this.handleChange} />
-                    <button>Search by Character</button>
-                </form>
-                <div>
-                    Page {this.state.pageNumber} out of {Math.ceil(this.state.count / 20)}
+                <div className='search-and-button-div'>
+                    <form onSubmit={this.handleSumbit}>
+                        <input onChange={this.handleChange} />
+                        <button>Search by Character</button>
+                    </form>
+                    <div>
+                        Page {this.state.pageNumber} out of {Math.ceil(this.state.count / 20)}
+                    </div>
+                    <div>
+                        {this.state.count} total Pokemon in query.
+                    </div>
+                    <div className='button-div'>
+                    {
+                        <button
+                        disabled={this.state.pageNumber === 1}
+                        onClick={this.handleDecrement}
+                        >
+                            Prev
+                        </button>
+                    }
+                    {
+                        <button
+                        disabled={this.state.pageNumber === Math.ceil(this.state.count / 20)}
+                        onClick={this.handleIncrement}
+                        >
+                            Next
+                        </button>
+                    }
+                    </div>
                 </div>
-                <div>
-                    {this.state.count} total Pokemon in query.
-                </div>
-                {
-                    <button
-                    disabled={this.state.pageNumber === 1}
-                    onClick={this.handleDecrement}
-                    >
-                        Prev
-                    </button>
-                }
-                {
-                    <button
-                    disabled={this.state.pageNumber === Math.ceil(this.state.count / 20)}
-                    onClick={this.handleIncrement}
-                    >
-                        Next
-                    </button>
-                }
                 <div className='pokemon-pagination-div'>
                     {
                     this.state.loading
                     ? <div><div>Loading</div> <img src='https://media.giphy.com/media/MTKsRM3QzNeOI59SbO/giphy.gif' alt='spinner' /> </div>
                     : this.state.pokeData.map(onePoke =>
-                        
-                       <div key={onePoke.onePoke} onClick={(e) => this.handleClick(onePoke)} className='fetched-pokemon-div'>
+                        <Link to={`/details/${onePoke.pokemon}`}>
+                       <div key={onePoke.onePoke} onClick={(e) => this.handleClick(onePoke)} className='fetched-details-div'>
                             <p>
                                 <p className='poke-name'>{onePoke.pokemon}</p>
                                 <img src={onePoke.url_image} alt={onePoke.pokemon} />
@@ -103,13 +108,9 @@ export default class Pagination extends Component {
                                 <p><span className='underline'>Shape:</span> {onePoke.shape}</p>
                             </p>
                         </div>
-                        
+                        </Link>
                     )}
-                        
-                    
-
                 </div>
-
             </div>
         )
     }
