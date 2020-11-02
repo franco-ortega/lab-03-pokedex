@@ -6,7 +6,7 @@ export default class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className='home-div'>
         <div className='home-text-div'>
           Go to the Search page to look through the Pokedex and look at all the different Pokemon based on different categories.
         </div>
