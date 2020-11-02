@@ -53,7 +53,6 @@ export default class Pagination extends Component {
     }
 
     render() {
-        console.log(this.state.pokemon);
         return (
             <div className='pagination-div'>
                 <div className='search-and-button-div'>

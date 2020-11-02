@@ -95,6 +95,7 @@ input, select {
     padding: 10px;
     width: min-content;
     height: auto;
+    border: solid purple 3px;
 }
 
 .poke-name {
@@ -111,11 +112,24 @@ input, select {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    border: solid 2px brown;
 }
 
 .search-and-button-div {
     margin: 10px;
     padding: 10px;
     text-align: center;
+}
+
+.details-link-div {
+    text-align: center;
+}
+
+.details-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.border {
+    border: solid purple 3px;
 }

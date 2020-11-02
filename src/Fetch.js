@@ -56,8 +56,7 @@ export default class Fetch extends Component {
         console.log('Type: ' + e.target.value);
       }
 
-//Pokemon Click
-
+//Pokemon Click to view Details
       handleClick = async (onePoke) => {
           this.props.history.push(`pokeData/${onePoke.pokemon}`);
       }
