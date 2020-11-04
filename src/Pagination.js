@@ -14,14 +14,29 @@ export default class Pagination extends Component {
         await this.fetchPokemon();
     }
 
-    handleSumbit = async (e) => {
-        e.preventDefault();
-        await this.fetchPokemon();
-    }
+    // handleSumbit = async (e) => {
+    //     e.preventDefault();
+    //     await this.fetchPokemon();
+    // }
 
-    handleChange = (e) => {
+    // handleChange = (e) => {
+    //     this.setState({ pokemon: e.target.value });
+    // }
+
+    //Search Input and Button
+    handleInput = async (e) => {
         this.setState({ pokemon: e.target.value });
     }
+
+    handleButton = async (e) => {
+        this.setState({ pokemon: e.target.value });
+        e.preventDefault();
+        const response = await fetch.get(`https://alchemy-pokedex.herokuapp.com/api/pokedex?pokemon=${this.state.pokemon}`);
+
+        this.setState({ pokeData: response.body.results})
+    }
+
+
 
     handleIncrement = async () => {
         await this.setState({
@@ -56,10 +71,12 @@ export default class Pagination extends Component {
         return (
             <div className='pagination-div'>
                 <div className='search-and-button-div'>
-                    <form onSubmit={this.handleSumbit}>
+                    {/* <form onSubmit={this.handleSumbit}>
                         <input onChange={this.handleChange} />
                         <button>Search by Character</button>
-                    </form>
+                    </form> */}
+                        <input onChange={this.handleInput} />
+                        <button onClick={this.handleButton}>Search by Name</button>
                     <div>
                         Page {this.state.pageNumber} out of {Math.ceil(this.state.count / 20)}
                     </div>
